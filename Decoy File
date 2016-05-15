@@ -42,6 +42,8 @@ public class CLock extends java.applet.Applet implements Runnable
         g.setFont(theFont);
         g.drawString(theDate.toString(),10,50);
     }
+    
+    
 }
 
 
