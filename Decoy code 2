@@ -14,3 +14,4 @@ public class CLock extends java.applet.Applet implements Runnable
             runner.start();
         }
     }
+    asdfasdf
