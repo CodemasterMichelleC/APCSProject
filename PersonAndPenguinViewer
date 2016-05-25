@@ -1,0 +1,59 @@
+
+/**
+ * Write a description of class AnimatedPersonViewer here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.util.concurrent.TimeUnit;
+public class AnimatedPersonViewer
+{
+    private static final int FRAME_WIDTH = 1200;
+    private static final int FRAME_HEIGHT = 720;
+    public static void main(String[] args)
+    {
+
+        JFrame frame = new JFrame();
+
+        frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
+        frame.setTitle("Person Jumping");
+        frame.setResizable(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JumpingComponent jcomp= new JumpingComponent();
+        frame.add(jcomp);
+        
+
+        frame.setVisible(true);
+        class TimerListener implements ActionListener
+        {
+            public void actionPerformed(ActionEvent event)
+            {
+                jcomp.repaint();
+            }
+        }
+//         class KeyListener extends KeyAdapter
+//         {
+//             public void keyPressed(KeyEvent e)
+//             {
+//                 for(int i=0;i<10;i++)
+//                 {
+//                     jcomp.repaint();
+//                     try {
+//                         wait(2);
+//                     } catch (Exception z) {}
+//                 }
+//             }
+// 
+//         }
+//         frame.addKeyListener(new KeyListener());
+        ActionListener listener = new TimerListener();
+        final int DELAY = 400; // Milliseconds between timer ticks
+        Timer t = new Timer(DELAY, listener);
+        t.start();
+    }
+}
+
