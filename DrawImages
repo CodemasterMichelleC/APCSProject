@@ -1,0 +1,77 @@
+
+/**
+ * Write a description of class DrawImages here.
+ * 
+ * @author Michelle Chuang 
+ * @version (a version number or a date)
+ */
+import javax.swing.*;
+import java.awt.*;
+import java.net.URL;
+import javax.imageio.ImageIO;
+import java.io.File;
+public class DrawImages extends JPanel
+{
+    private Image image;
+    private String imgUrl;
+    private int posX;
+    private int posY;
+    public DrawImages(String url, int x, int y)
+    {
+        imgUrl=url;
+        posX=x;
+        posY=y;
+        try
+        {
+            image=ImageIO.read(new File(url));
+        }
+        catch(Exception e)
+        {
+            System.out.println("No such file");
+        }
+    }
+    
+    //Person
+    public void render1234 (Graphics g)
+    {
+        g.drawImage(image,10,100,this);
+    }
+
+    public void render5 (Graphics g)
+    {
+        g.drawImage(image,60,100,this);
+    }
+
+    public void render6789 (Graphics g)
+    {
+        g.drawImage(image,110,100,this);
+    }
+    
+    //Penguin
+    public void render123(Graphics g)
+    {
+        g.drawImage(image,600,70,this);
+    }
+
+    public void render4(Graphics g)
+    {
+        g.drawImage(image,550,70,this);
+    }
+
+    public void render5p(Graphics g)
+    {
+        g.drawImage(image,500,70,this);
+    }
+
+    public void render6(Graphics g)
+    {
+        g.drawImage(image,450,70,this);
+    }
+    
+    public void render7(Graphics g)
+    {
+        g.drawImage(image,400,70,this);
+    }
+    
+    //public void renderB(Graphics g)
+}
