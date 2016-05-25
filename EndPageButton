@@ -4,6 +4,9 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
+ 
+ //purpose: let the user to choose whether to play again or exit
+// borrowed from toturialpoint website but certain changes have been made
 
 import java.awt.*;
 import java.awt.event.*;
